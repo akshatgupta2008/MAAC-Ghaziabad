@@ -1,0 +1,8 @@
+# robots.txt — MAAC Ghaziabad
+# Allows all search engines to crawl the whole site.
+
+User-agent: *
+Allow: /
+
+# Update the domain below if you host on a different address.
+Sitemap: https://maacghaziabad.com/sitemap.xml
