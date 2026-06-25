@@ -1205,6 +1205,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav__links a { font-size: 1.25rem; }
   .nav__toggle { display: flex; z-index: 101; }
   .nav__actions .btn--ghost { display: none; }
+  .nav__actions .btn--primary {
+    padding: 11px 16px;
+    font-size: 0.84rem;
+  }
   .nav__actions { gap: 10px; }
 
   .hero__inner { max-width: 100%; }
@@ -1219,6 +1223,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 600px) {
   body { font-size: 16px; }
+  .nav { padding: 10px 0; }
+  .nav__logo img { height: 50px; }
+  .nav__actions .btn--primary { display: none; }
+  .nav__links {
+    width: 100vw;
+    gap: 20px;
+  }
+  .nav__links a { font-size: 1.1rem; }
   .hero { min-height: 0; padding: 118px 0 78px; }
   .hero__title { font-size: clamp(2.35rem, 10.5vw, 3.35rem); line-height: 1.18; }
   .hero__sub { margin-top: 18px; font-size: 1.02rem; }
@@ -1227,6 +1239,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero__stats { margin-top: 42px; justify-content: center; gap: 18px 22px; }
   .hero__stat { flex: 1 1 calc(50% - 12px); min-width: 138px; }
   .hero__stat .num { font-size: 2.2rem; }
+  .section-head { margin-bottom: 42px; }
+  .display { line-height: 1.04; }
 
   .section { padding: 84px 0; }
   .container { padding: 0 18px; }
@@ -1243,6 +1257,15 @@ ul { margin: 0; padding: 0; list-style: none; }
   .centre,
   .pillar,
   .course__body { padding-left: 20px; padding-right: 20px; }
+  .course__body h3 { font-size: 1.2rem; }
+  .pstat { padding: 22px 12px; }
+  .pstat .num { font-size: 2.35rem; }
+  .ticker { padding: 12px 0; }
+  .ticker__track span {
+    font-size: 0.9rem;
+    padding: 0 18px;
+    gap: 18px;
+  }
   .footer__grid { grid-template-columns: 1fr; gap: 36px; }
   .about__media .img-sub { width: 46%; right: 0; }
   .about__badge { top: -18px; left: -10px; padding: 14px 16px; }
@@ -1260,6 +1283,22 @@ ul { margin: 0; padding: 0; list-style: none; }
   .fbtn svg {
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container { padding: 0 14px; }
+  .hero { padding: 106px 0 70px; }
+  .hero__title { font-size: clamp(2rem, 11.5vw, 2.7rem); }
+  .hero__sub { font-size: 0.95rem; }
+  .hero__stat { min-width: 124px; }
+  .hero__stat .num { font-size: 1.95rem; }
+  .display { font-size: clamp(2.05rem, 9.8vw, 2.5rem); }
+  .section { padding: 72px 0; }
+  .form { padding: 26px 18px; }
+  .floats {
+    right: 10px;
+    bottom: 10px;
   }
 }
 
