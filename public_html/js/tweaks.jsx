@@ -17,7 +17,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "displayFont": "Anton",
   "animations": true,
   "tickerSpeed": 30,
-  "heroBanner": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=85&auto=format&fit=crop"
+  "heroBanner": "https://www.maacindia.com/images/home/young-learners-with-laptop.jpg"
 }/*EDITMODE-END*/;
 
 // Logo-derived color combinations (all red-forward, per MAAC brand)
@@ -36,10 +36,10 @@ const FONT_MAP = {
 
 // Full-width hero banner options (swap any for your own student/centre photo)
 const HERO_BANNERS = {
-  "Editing Suite": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=85&auto=format&fit=crop",
-  "Creative Studio": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1920&q=85&auto=format&fit=crop",
-  "Gaming / Neon": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920&q=85&auto=format&fit=crop",
-  "Design Desk": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1920&q=85&auto=format&fit=crop"
+  "Young Learners": "https://www.maacindia.com/images/home/young-learners-with-laptop.jpg",
+  "GenAI": "https://www.maacindia.com/images/home/banner-genai-th.jpg",
+  "Fueling Dreams": "https://www.maacindia.com/images/home/banner-fueling-dreams-th.jpg",
+  "BVOC": "https://www.maacindia.com/images/home/banner-bvoc-th.jpg"
 };
 
 function MaacTweaks() {

@@ -18,6 +18,39 @@ var WHATSAPP_NUMBER = "919773819545"; // country code + number, no symbols
 document.addEventListener("DOMContentLoaded", function () {
 
   /* ============================================================
+     0. HERO BACKGROUND ROTATION
+     Cycles through the supplied banner images every 3 seconds.
+     Preloads the images first so the transition stays smooth.
+     ============================================================ */
+ var heroBanner = document.getElementById("heroBanner");
+if (heroBanner) {
+  var heroImages = [
+    "https://www.maacindia.com/images/home/young-learners-with-laptop.jpg", 
+    "https://www.maacindia.com/assets/c3-DDaN8G1C.webp", 
+    "https://www.maacindia.com/assets/c6-C0xjQx6H.webp"
+  ];
+  var loadedHeroImages = [];
+  
+  heroImages.forEach(function (src) {
+    var image = new Image();
+    image.src = src;
+    loadedHeroImages.push(src);
+  });
+
+  var heroIndex = 0;
+  
+  function setHeroImage(src) {
+    // Added a linear-gradient overlay before the image URL
+    heroBanner.style.backgroundImage = "linear-gradient(rgba(165, 163, 163, 0.4), rgba(165, 163, 163, 0.4)), url('" + src + "')";
+  }
+
+  setHeroImage(loadedHeroImages[heroIndex]);
+  
+  setInterval(function () {
+    heroIndex = (heroIndex + 1) % loadedHeroImages.length;
+    setHeroImage(loadedHeroImages[heroIndex]);
+  }, 3000);
+} /* ============================================================
      1. STICKY NAVBAR
      ============================================================ */
   var nav = document.getElementById("nav");

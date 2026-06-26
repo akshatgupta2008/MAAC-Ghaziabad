@@ -316,36 +316,34 @@ ul { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  transform: scale(1.08);
-  animation: heroZoom 20s ease-in-out infinite alternate;
+  transform: scale(1);
+  animation: none;
 }
-@keyframes heroZoom { to { transform: scale(1); } }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(120% 90% at 12% 22%, rgba(255, 46, 46, 0.22), transparent 55%),
-    linear-gradient(90deg, rgba(8,8,10,0.92) 0%, rgba(8,8,10,0.66) 46%, rgba(8,8,10,0.34) 100%),
-    linear-gradient(180deg, rgba(8,8,10,0.35) 0%, rgba(8,8,10,0.18) 35%, var(--ink) 100%);
+    linear-gradient(90deg, rgba(8,8,10,0.72) 0%, rgba(8,8,10,0.40) 46%, rgba(8,8,10,0.16) 100%),
+    linear-gradient(180deg, rgba(8,8,10,0.18) 0%, rgba(8,8,10,0.08) 35%, rgba(8,8,10,0.90) 100%);
 }
 /* Floating gradient blobs */
 .hero__blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.5;
+  filter: blur(100px);
+  opacity: 0.06;
   pointer-events: none;
 }
 .hero__blob--1 {
   width: 460px; height: 460px;
-  background: radial-gradient(circle, rgba(255,46,46,0.55), transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 70%);
   top: -120px; right: -80px;
   animation: float1 14s ease-in-out infinite;
 }
 .hero__blob--2 {
   width: 380px; height: 380px;
-  background: radial-gradient(circle, rgba(255,122,26,0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
   bottom: -120px; left: 10%;
   animation: float2 17s ease-in-out infinite;
 }
@@ -1108,25 +1106,43 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ============================================================
    15. FLOATING BUTTONS
    ============================================================ */
-.floats {
-  position: fixed;
-  right: 22px; bottom: 22px;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
+
+/* We no longer need the .floats class, so it has been removed */
+
 .fbtn {
-  width: 58px; height: 58px;
+  position: fixed; /* Moved directly to the button */
+  bottom: 22px;
+  z-index: 90;
+  width: 68px;     /* Increased from 58px */
+  height: 68px;    /* Increased from 58px */
   border-radius: 50%;
-  display: grid; place-items: center;
+  display: grid; 
+  place-items: center;
   box-shadow: 0 12px 30px -8px rgba(0,0,0,0.6);
   transition: transform 0.3s var(--ease);
 }
-.fbtn:hover { transform: scale(1.08); }
-.fbtn svg { width: 28px; height: 28px; }
-.fbtn--wa { background: #25d366; }
-.fbtn--call { background: var(--grad-hot); }
+
+.fbtn:hover { 
+  transform: scale(1.08); 
+}
+
+.fbtn svg { 
+  width: 34px;     /* Increased from 28px */
+  height: 34px;    /* Increased from 28px */
+}
+
+/* WhatsApp Button - Positioned on the Left */
+.fbtn--wa { 
+  background: #25d366; 
+  left: 22px;      /* Puts the button on the left edge */
+}
+
+/* Call Button - Positioned on the Right */
+.fbtn--call { 
+  background: var(--grad-hot); 
+  right: 22px;     /* Puts the button on the right edge */
+}
+
 .fbtn--wa::after {
   content: "";
   position: absolute;
@@ -1135,14 +1151,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow: 0 0 0 0 rgba(37,211,102,0.6);
   animation: pulse-wa 2.2s infinite;
 }
-.fbtn { position: relative; }
+
 @keyframes pulse-wa {
   0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.55); }
   70%  { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
   100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
-/* Toast (form confirmation) */
+/* Toast (form confirmation) - Kept exactly as you had it */
 .toast {
   position: fixed;
   left: 50%; bottom: 28px;
@@ -1159,8 +1175,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: transform 0.5s var(--ease);
 }
 .toast.show { transform: translate(-50%, 0); }
-
-
 /* ============================================================
    16. RESPONSIVE
    ============================================================ */
