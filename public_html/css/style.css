@@ -1054,20 +1054,39 @@ ul { margin: 0; padding: 0; list-style: none; }
 .centre__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .centre__actions .btn { padding: 12px 22px; font-size: 0.92rem; }
 /* ============================================================
-   13c. FAQ SECTION
+   13c. FAQ SECTION - BULLETPROOF VERSION
    ============================================================ */
+
+/* 1. Container Spacing */
+.faq__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Adjust this to change the space between questions */
+}
+
+/* Fallback margin just in case 'gap' is overridden */
+.faq__item {
+  margin-bottom: 24px;
+}
+.faq__item:last-child {
+  margin-bottom: 0;
+}
+
+/* 2. Question (Summary) Styling */
 .faq__question {
   font-family: var(--font-head);
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--text);
-  /* Increased right padding to 50px so text never overlaps the + icon */
   padding: 22px 50px 22px 26px; 
   cursor: pointer;
-  list-style: none; /* Hides default triangle */
   
-  /* Changed from flex to block to fix the inline <b> tag wrapping issue */
-  display: block; 
+  /* FORCE hide the default triangle marker */
+  list-style: none !important; 
+  
+  /* Block display prevents inline tag wrapping issues */
+  display: block !important; 
+  
   position: relative; 
   text-align: left;
   transition: color 0.3s var(--ease), background 0.3s var(--ease);
@@ -1075,29 +1094,31 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* Hide default marker for Safari/Chrome */
 .faq__question::-webkit-details-marker {
-  display: none;
+  display: none !important;
 }
 
-/* Custom animated plus/cross icon */
+/* 3. Custom Animated Plus Icon */
 .faq__question::after {
   content: "+";
   position: absolute;
   right: 26px;
   top: 50%;
-  transform: translateY(-50%); /* Perfectly centers the icon vertically */
-  font-family: var(--font-display);
+  transform: translateY(-50%); 
+  
+  /* Fallback fonts/colors just in case your CSS variables drop on the live server */
+  font-family: var(--font-display), sans-serif;
   font-size: 1.6rem;
-  color: var(--red);
+  color: var(--red, #ff0000); 
+  
   line-height: 1;
   transition: transform 0.4s var(--ease), color 0.3s var(--ease);
 }
 
+/* 4. Open State (Rotates to 'x' and changes color) */
 .faq__item[open] .faq__question::after {
-  /* Maintains vertical centering while rotating into an 'x' */
   transform: translateY(-50%) rotate(45deg);
-  color: var(--orange);
+  color: var(--orange, #ffa500); 
 }
-
 /* (Leave your existing .faq__item[open] .faq__question code below this alone) */
 /* ============================================================
    14. FOOTER
